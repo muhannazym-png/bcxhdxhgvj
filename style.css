@@ -1,0 +1,629 @@
+
+:root {
+    --cream: #fff8f3;
+    --pink: #f3d8d6;
+    --rose: #c77f88;
+    --dark-rose: #8f535f;
+    --text: #4b3638;
+    --muted: #907b7a;
+    --white: #fffdfb;
+    --border: #f0e2dc;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 30px;
+}
+
+body {
+    background: var(--cream);
+    color: var(--text);
+    font-family: "DM Sans", sans-serif;
+    line-height: 1.8;
+    overflow-x: hidden;
+}
+
+button,
+a {
+    -webkit-tap-highlight-color: transparent;
+}
+
+button,
+a {
+    font-family: inherit;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+button:focus-visible,
+a:focus-visible {
+    outline: 2px solid var(--rose);
+    outline-offset: 4px;
+}
+
+.floating-flowers {
+    position: fixed;
+    inset: 0;
+    overflow: hidden;
+    pointer-events: none;
+    z-index: -1;
+}
+
+.floating-flowers span {
+    position: absolute;
+    color: #d9a3a5;
+    opacity: 0.18;
+    font-size: 2rem;
+    animation: float 8s ease-in-out infinite;
+}
+
+.floating-flowers span:nth-child(1) {
+    top: 18%;
+    left: 5%;
+}
+
+.floating-flowers span:nth-child(2) {
+    top: 35%;
+    right: 7%;
+    animation-delay: 1s;
+}
+
+.floating-flowers span:nth-child(3) {
+    top: 65%;
+    left: 3%;
+    animation-delay: 2s;
+}
+
+.floating-flowers span:nth-child(4) {
+    top: 75%;
+    right: 5%;
+    animation-delay: 3s;
+}
+
+.floating-flowers span:nth-child(5) {
+    top: 48%;
+    left: 90%;
+    animation-delay: 1.5s;
+}
+
+.floating-flowers span:nth-child(6) {
+    top: 88%;
+    left: 25%;
+    animation-delay: 2.5s;
+}
+
+.header {
+    min-height: 75px;
+    padding: 18px 7%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+    border-bottom: 1px solid var(--border);
+    background: rgba(255, 248, 243, 0.8);
+}
+
+.logo {
+    font-family: "Playfair Display", serif;
+    font-size: 1.35rem;
+}
+
+.logo span {
+    color: var(--rose);
+}
+
+.header-note,
+.eyebrow,
+.section-label,
+.scroll-note,
+.photo-top,
+footer {
+    font-size: 0.65rem;
+    letter-spacing: 2px;
+}
+
+.header-note {
+    color: var(--muted);
+}
+
+.hero {
+    min-height: 690px;
+    padding: 100px 24px 80px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background:
+        radial-gradient(ellipse at 50% 40%, #fffdfb 0%, transparent 70%);
+}
+
+.hero-flower {
+    font-size: 4rem;
+    color: var(--rose);
+    line-height: 1;
+    margin-bottom: 35px;
+    animation: flowerPulse 4s ease-in-out infinite;
+}
+
+.eyebrow,
+.section-label {
+    color: var(--rose);
+    font-weight: 600;
+}
+
+.hero h1 {
+    margin: 22px 0;
+    font-family: "Playfair Display", serif;
+    font-weight: 500;
+    font-size: clamp(3rem, 8vw, 6rem);
+    line-height: 1.12;
+    letter-spacing: -1.5px;
+}
+
+.hero h1 em,
+.memories-section h2 em,
+.gratitude-section h2 em,
+.final-section h2 em {
+    color: var(--rose);
+    font-weight: 500;
+}
+
+.hero-text {
+    max-width: 530px;
+    color: var(--muted);
+    margin: 0 auto 30px;
+    font-size: 0.98rem;
+}
+
+.main-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    padding: 15px 24px;
+    border-radius: 4px;
+    background: var(--rose);
+    color: white;
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 1.3px;
+    transition: background 0.25s, transform 0.25s;
+}
+
+.main-button:hover {
+    background: var(--dark-rose);
+    transform: translateY(-3px);
+}
+
+.scroll-note {
+    margin-top: 45px;
+    color: #b09a98;
+    font-size: 0.6rem;
+}
+
+.letter-section,
+.memories-section,
+.gratitude-section,
+.final-section {
+    padding: 90px 7%;
+}
+
+.letter-section {
+    background: #fffdfb;
+}
+
+.section-label {
+    text-align: center;
+    margin-bottom: 35px;
+}
+
+.letter-card {
+    position: relative;
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 60px clamp(25px, 7vw, 75px);
+    border: 1px solid var(--border);
+    background: var(--white);
+    box-shadow: 0 15px 55px rgba(130, 82, 77, 0.06);
+}
+
+.letter-decoration {
+    text-align: center;
+    color: var(--rose);
+    font-size: 2rem;
+    margin-bottom: 12px;
+}
+
+.letter-card h2 {
+    font-family: "Playfair Display", serif;
+    font-size: 2.7rem;
+    font-weight: 500;
+    margin-bottom: 25px;
+    text-align: center;
+}
+
+.letter-card p {
+    margin-bottom: 20px;
+    color: #766261;
+    font-size: 0.94rem;
+}
+
+.letter-card .letter-highlight {
+    color: var(--dark-rose);
+    font-family: "Playfair Display", serif;
+    font-style: italic;
+    font-size: 1.25rem;
+    line-height: 1.8;
+    text-align: center;
+    margin: 35px 0;
+}
+
+.letter-card .signature {
+    margin-top: 35px;
+    margin-bottom: 0;
+    text-align: right;
+    color: var(--text);
+}
+
+.signature em {
+    color: var(--rose);
+    font-family: "Playfair Display", serif;
+    font-size: 1.2rem;
+}
+
+.memories-section {
+    text-align: center;
+}
+
+.memories-section h2,
+.gratitude-section h2,
+.final-section h2 {
+    font-family: "Playfair Display", serif;
+    font-weight: 500;
+    font-size: clamp(2.4rem, 5vw, 4rem);
+    line-height: 1.2;
+}
+
+.section-intro {
+    max-width: 450px;
+    margin: 20px auto 40px;
+    color: var(--muted);
+    font-size: 0.92rem;
+}
+
+.memory-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 20px;
+    max-width: 850px;
+    margin: 0 auto;
+    text-align: left;
+}
+
+.memory-card {
+    padding: 30px;
+    background: rgba(255, 253, 251, 0.8);
+    border: 1px solid var(--border);
+    transition: transform 0.25s, box-shadow 0.25s;
+}
+
+.memory-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 30px rgba(130, 82, 77, 0.07);
+}
+
+.memory-icon {
+    font-size: 2rem;
+    color: var(--rose);
+    margin-bottom: 12px;
+}
+
+.memory-card h3 {
+    font-family: "Playfair Display", serif;
+    font-size: 1.5rem;
+    font-weight: 500;
+    margin-bottom: 8px;
+}
+
+.memory-card p {
+    color: var(--muted);
+    font-size: 0.87rem;
+}
+
+.gratitude-section {
+    background: #f8e9e4;
+    text-align: center;
+}
+
+.gratitude-flower {
+    font-size: 2.5rem;
+    color: var(--rose);
+    margin-bottom: 12px;
+}
+
+.gratitude-section h2 {
+    margin-bottom: 35px;
+}
+
+.wishes {
+    max-width: 650px;
+    margin: 0 auto;
+    text-align: left;
+}
+
+.wishes p {
+    padding: 15px 20px;
+    margin-bottom: 10px;
+    border: 1px solid rgba(199, 127, 136, 0.15);
+    background: rgba(255, 253, 251, 0.55);
+    color: #765c5c;
+    font-size: 0.9rem;
+    transition: transform 0.2s;
+}
+
+.wishes p:hover {
+    transform: translateX(5px);
+}
+
+.gratitude-ending {
+    max-width: 600px;
+    margin: 35px auto 0;
+    color: var(--dark-rose);
+    font-family: "Playfair Display", serif;
+    font-style: italic;
+    font-size: 1.25rem;
+    line-height: 1.8;
+}
+
+.final-section {
+    text-align: center;
+    padding-bottom: 110px;
+}
+
+.final-flower {
+    font-size: 3.5rem;
+    color: var(--rose);
+    margin-bottom: 12px;
+    animation: flowerPulse 4s ease-in-out infinite;
+}
+
+.final-section h2 {
+    margin-bottom: 20px;
+}
+
+.final-section > p:not(.final-message):not(.hidden-message) {
+    max-width: 480px;
+    margin: 0 auto 35px;
+    color: var(--muted);
+    font-size: 0.9rem;
+}
+
+.photo-frame {
+    max-width: 480px;
+    margin: 0 auto;
+    padding: 18px 18px 0;
+    background: var(--white);
+    border: 1px solid var(--border);
+    box-shadow: 0 20px 60px rgba(130, 82, 77, 0.12);
+    transform: rotate(-1deg);
+    transition: transform 0.35s;
+}
+
+.photo-frame:hover {
+    transform: rotate(0deg) translateY(-4px);
+}
+
+.photo-top {
+    color: var(--rose);
+    font-size: 0.6rem;
+    padding: 7px 0 15px;
+}
+
+.mom-photo {
+    display: block;
+    width: 100%;
+    height: auto;
+    max-height: 600px;
+    object-fit: contain;
+    background: #f8e9e4;
+}
+
+.photo-caption {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    padding: 17px 5px 19px;
+    font-family: "Playfair Display", serif;
+    font-style: italic;
+    font-size: 1rem;
+    color: var(--text);
+}
+
+.photo-heart {
+    color: var(--rose);
+    font-size: 1.4rem;
+}
+
+.final-message {
+    margin: 45px auto 25px;
+    font-family: "Playfair Display", serif;
+    font-style: italic;
+    font-size: 1.5rem;
+    line-height: 1.8;
+    color: var(--dark-rose);
+}
+
+.love-button {
+    padding: 14px 23px;
+    border: 1px solid var(--rose);
+    border-radius: 4px;
+    background: transparent;
+    color: var(--dark-rose);
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: all 0.25s;
+}
+
+.love-button:hover {
+    background: var(--rose);
+    color: white;
+    transform: translateY(-2px);
+}
+
+.hidden-message {
+    max-width: 500px;
+    margin: 25px auto 0;
+    padding: 24px;
+    border: 1px solid var(--border);
+    background: white;
+    color: var(--dark-rose);
+    font-family: "Playfair Display", serif;
+    font-style: italic;
+    font-size: 1.15rem;
+    animation: appear 0.5s ease;
+}
+
+.hidden-message[hidden] {
+    display: none;
+}
+
+footer {
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+    padding: 25px 7%;
+    border-top: 1px solid var(--border);
+    color: #a18b89;
+    font-size: 0.58rem;
+    text-align: center;
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0) rotate(0);
+    }
+    50% {
+        transform: translateY(-20px) rotate(12deg);
+    }
+}
+
+@keyframes flowerPulse {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.08);
+    }
+}
+
+@keyframes appear {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (max-width: 600px) {
+    .header {
+        padding: 16px 5%;
+    }
+
+    .logo {
+        font-size: 1.15rem;
+    }
+
+    .header-note {
+        max-width: 130px;
+        text-align: right;
+        font-size: 0.5rem;
+        letter-spacing: 1px;
+    }
+
+    .hero {
+        min-height: 600px;
+        padding: 80px 23px;
+    }
+
+    .hero h1 {
+        font-size: clamp(2.7rem, 12vw, 4rem);
+        letter-spacing: -0.5px;
+    }
+
+    .hero-text {
+        font-size: 0.9rem;
+    }
+
+    .letter-section,
+    .memories-section,
+    .gratitude-section,
+    .final-section {
+        padding: 65px 6%;
+    }
+
+    .letter-card {
+        padding: 40px 23px;
+    }
+
+    .letter-card h2 {
+        font-size: 2.2rem;
+    }
+
+    .letter-card p {
+        font-size: 0.88rem;
+    }
+
+    .memory-grid {
+        grid-template-columns: 1fr;
+        gap: 13px;
+    }
+
+    .memory-card {
+        padding: 25px;
+    }
+
+    .wishes p {
+        padding: 14px;
+        font-size: 0.84rem;
+    }
+
+    .photo-frame {
+        padding: 12px 12px 0;
+    }
+
+    .photo-caption {
+        font-size: 0.85rem;
+    }
+
+    footer {
+        flex-direction: column;
+        align-items: center;
+        line-height: 1.8;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        scroll-behavior: auto !important;
+        animation: none !important;
+        transition: none !important;
+    }
+}
